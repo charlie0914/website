@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const items = [
+  { id: 1, type: 'color', label: 'Event — Before / After' },
+  { id: 2, type: 'color', label: 'Portrait — Before / After' },
+  { id: 3, type: 'color', label: 'Restaurant — Before / After' },
+  { id: 4, type: 'photo', label: 'Wildlife' },
+  { id: 5, type: 'photo', label: 'Event' },
+  
+];
+---
+
+<Layout title="Charlie Liao — Gallery">
+  <div class="py-16 lg:px-[160px] px-6">
+
+    <!-- Page title -->
+    <h2 class="tracking-[0.2em] text-xl lg:text-3xl mb-2">Gallery</h2>
+    <div class="h-[1px] w-full mb-10" style="background-color: var(--color-orange);"></div>
+
+    <!-- Filter tabs -->
+    <div class="flex gap-6 mb-10">
+      <button class="tracking-widest text-sm lg:text-base pb-1 border-b border-white" id="btn-all" onclick="filter('all')">All</button>
+      <button class="tracking-widest text-sm lg:text-base pb-1 opacity-50" id="btn-color" onclick="filter('color')">Color Grading</button>
+      <button class="tracking-widest text-sm lg:text-base pb-1 opacity-50" id="btn-photo" onclick="filter('photo')">Photography</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+
+      <!-- Color grading items — before/after slider -->
+      <div class="gallery-item color group" data-type="color">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Event — Before / After</p>
+      </div>
+
+      <div class="gallery-item color" data-type="color">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Portrait — Before / After</p>
+      </div>
+
+      <div class="gallery-item color" data-type="color">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Restaurant — Before / After</p>
+      </div>
+
+      <!-- Photo items -->
+      <div class="gallery-item photo" data-type="photo">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+      </div>
+
+      <div class="gallery-item photo" data-type="photo">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Event</p>
+      </div>
+
+      <div class="gallery-item photo" data-type="photo">
+        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
+        </div>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Street</p>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function filter(type) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = { all: 'btn-all', color: 'btn-color', photo: 'btn-photo' };
+
+    Object.values(buttons).forEach(id => {
+      document.getElementById(id).classList.add('opacity-50');
+      document.getElementById(id).classList.remove('border-b', 'border-white');
+    });
+
+    document.getElementById(buttons[type]).classList.remove('opacity-50');
+    document.getElementById(buttons[type]).classList.add('border-b', 'border-white');
+
+    items.forEach(item => {
+      if (type === 'all' || item.dataset.type === type) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  window.filter = filter;
+</script>

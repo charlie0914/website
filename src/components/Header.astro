@@ -1,0 +1,89 @@
+---
+---
+<header class=" pt-6 pb-0">
+<div class="flex flex-col items-center md:flex-row md:items-end md:justify-between lg:px-[160px] pt-4">
+  <div class="text-center md:text-left">
+    <a href="/" class="block text-white no-underline">
+      <h1 class="tracking-[0.35em] text-[36px] lg:text-6xl leading-none">Charlie Liao</h1>
+    </a>
+    <p class="mt-4 lg:ml-1.5  text:sm lg:text-xl tracking-wide text-left" >
+      Videographer, based in London & Taipei
+    </p>
+  </div>
+    <!-- Desktop nav only -->
+    <nav class="hidden md:flex items-center gap-8 ">
+      <a href="/about" class="tracking-widest text-sm lg:text-2xl">About Me</a>
+      <a href="/service" class="tracking-widest text-sm lg:text-2xl">Service</a>
+      <a href="/past-work" class="tracking-widest text-sm lg:text-2xl">Past Work</a>
+      <a href="/Gallery" class="tracking-widest text-sm lg:text-2xl">Gallery</a>
+      <a href="/contact"
+        class="px-6 py-2 rounded-full text-sm lg:text-2xl tracking-widest"
+        style="background-color: var(--color-orange); color: white;">
+        Contact
+      </a>
+    </nav>
+    
+</div>
+<!-- Desktop: 1px orange line -->
+<div class="hidden md:block mt-4 px-[160px]">
+  <div class="h-[1px] w-full" style="background-color: var(--color-orange);"></div>
+</div>
+<!-- Mobile: full width orange bar, whole thing is the button -->
+<div class="md:hidden mt-4">
+  <button id="hamburger"
+    class="flex items-center justify-center h-[45px] w-full cursor-pointer"
+    style="background-color: var(--color-orange);">
+    <div class="flex flex-col gap-[5px]">
+      <span class="block w-6 h-[1.5px] bg-white"></span>
+      <span class="block w-6 h-[1.5px] bg-white"></span>
+      <span class="block w-6 h-[1.5px] bg-white"></span>
+    </div>
+  </button>
+</div>
+<!-- Full page overlay -->
+<div id="mobile-overlay"
+   class="fixed inset-0 z-[999] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+   style="background-color: rgba(255, 150, 29, 1);">
+
+  <!-- Close button -->
+  <button id="close-menu"
+    class="absolute top-6 right-6 text-white text-3xl leading-none cursor-pointer">
+    ✕
+  </button>
+
+  <!-- Nav links -->
+  <nav class="flex flex-col items-center gap-8">
+    <a href="/about" class="text-white text-2xl tracking-widest">About Me</a>
+    <a href="/service" class="text-white text-2xl tracking-widest">Service</a>
+    <a href="/past-work" class="text-white text-2xl tracking-widest">Past Work</a>
+    <a href="/contact" class="text-white text-2xl tracking-widest">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const closeBtn = document.getElementById('close-menu');
+  const overlay = document.getElementById('mobile-overlay');
+
+  function openMenu() {
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100', 'pointer-events-auto');
+  }
+
+  function closeMenu() {
+    overlay.classList.remove('opacity-100', 'pointer-events-auto');
+    overlay.classList.add('opacity-0');
+    setTimeout(() => overlay.classList.add('pointer-events-none'), 300);
+  }
+
+  hamburger?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+
+  // Close on nav link click
+  overlay?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
+  </div>
+
+</header>
