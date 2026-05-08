@@ -5,10 +5,18 @@
   <!-- Mobile layout -->
   <div class="flex items-center justify-between md:hidden">
     <div class="flex gap-3">
-      <!-- Social placeholders - replace with real icons/links -->
-      <a href="#" class="w-12 h-12 rounded-2xl bg-white/10 block"></a>
-      <a href="#" class="w-12 h-12 rounded-2xl bg-white/10 block"></a>
-      <a href="#" class="w-12 h-12 rounded-2xl bg-white/10 block"></a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/charlieliao99" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/>
+        </svg>
+      </a>
+      <!-- Mail -->
+      <a href="mailto:charlieliao99@gmail.com" class="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-white/20 hover:bg-[--color-orange]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+      </a>
     </div>
     <a href="/contact"
       class="px-6 py-2 rounded-full text-sm tracking-widest"
@@ -17,22 +25,35 @@
     </a>
   </div>
 
+  <!-- Mobile copyright -->
+  <p class="text-xs tracking-wide  text-center mt-4 md:hidden">
+    Charlie Liao, 2026. All Rights Reserved.
+  </p>
+
   <!-- Desktop layout -->
-  <div class="hidden md:flex items-center justify-between  lg:px-[160px]">
-    <p class="text-sm tracking-wide underline" style="">
+  <div class="hidden md:flex items-center justify-between lg:px-[160px]">
+    <p class="text-sm tracking-wide ">
       Charlie Liao, 2026. All Rights Reserved.
     </p>
     <div class="flex gap-3">
-      <a href="#" class="w-10 h-10 rounded-full bg-white/20 block"></a>
-      <a href="#" class="w-10 h-10 rounded-full bg-white/20 block"></a>
-      <a href="#" class="w-10 h-10 rounded-full bg-white/20 block"></a>
+      <!-- Instagram -->
+      <a href="https://instagram.com/charlieliao99" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/>
+        </svg>
+      </a>
+      <!-- Mail -->
+      <a href="mailto:charlieliao99@gmail.com" class="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-white/20 hover:bg-[--color-orange]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+      </a>
+       <a href="/contact"
+        class="px-4 py-1 rounded-full text-sm lg:text-xl tracking-widest"
+        style="background-color: var(--color-orange); color: white;">
+        Contact
+      </a>
     </div>
   </div>
-
-  <!-- Mobile copyright -->
-  <p class="text-xs tracking-wide underline text-center mt-4 md:hidden"
-    style="">
-    Charlie Liao, 2026. All Rights Reserved.
-  </p>
 
 </footer>

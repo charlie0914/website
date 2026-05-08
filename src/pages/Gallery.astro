@@ -1,76 +1,135 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const items = [
-  { id: 1, type: 'color', label: 'Event — Before / After' },
-  { id: 2, type: 'color', label: 'Portrait — Before / After' },
-  { id: 3, type: 'color', label: 'Restaurant — Before / After' },
-  { id: 4, type: 'photo', label: 'Wildlife' },
-  { id: 5, type: 'photo', label: 'Event' },
-  
-];
 ---
 
 <Layout title="Charlie Liao — Gallery">
-  <div class="py-16 lg:px-[160px] px-6">
+  <div class="py-8 lg:px-[160px] px-6">
 
-    <!-- Page title -->
-    <h2 class="tracking-[0.2em] text-xl lg:text-3xl mb-2">Gallery</h2>
-    <div class="h-[1px] w-full mb-10" style="background-color: var(--color-orange);"></div>
+    <h2 class="text-xl lg:text-3xl font-normal mb-8" style="color: var(--color-orange);">Gallery</h2>
 
-    <!-- Filter tabs -->
-    <div class="flex gap-6 mb-10">
-      <button class="tracking-widest text-sm lg:text-base pb-1 border-b border-white" id="btn-all" onclick="filter('all')">All</button>
-      <button class="tracking-widest text-sm lg:text-base pb-1 opacity-50" id="btn-color" onclick="filter('color')">Color Grading</button>
-      <button class="tracking-widest text-sm lg:text-base pb-1 opacity-50" id="btn-photo" onclick="filter('photo')">Photography</button>
-    </div>
+   <div class="flex gap-6 mb-10 lg:px-2">
+  <button class="tracking-widest text-sm lg:text-base border-b border-white hover:opacity-100 transition-opacity duration-200" id="btn-all" onclick="filter('all')">All</button>
+  <button class="tracking-widest text-sm lg:text-base opacity-50 hover:opacity-100 transition-opacity duration-200" id="btn-lms" onclick="filter('lms')">Like Mike Sports</button>
+  <button class="tracking-widest text-sm lg:text-base opacity-50 hover:opacity-100 transition-opacity duration-200" id="btn-3d" onclick="filter('3d')">3D Game Design</button>
+  <button class="tracking-widest text-sm lg:text-base opacity-50 hover:opacity-100 transition-opacity duration-200" id="btn-wildlife" onclick="filter('wildlife')">Wildlife</button>
+</div>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-2 " id="gallery-grid">
 
-      <!-- Color grading items — before/after slider -->
-      <div class="gallery-item color group" data-type="color">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Event — Before / After</p>
+      <div class="gallery-item" data-type="lms">
+        <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/b0z_uD61Rn8?si=UAtFz2A2S03R3Wdk"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
 
-      <div class="gallery-item color" data-type="color">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Portrait — Before / After</p>
+      <div class="gallery-item" data-type="lms">
+          <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/eX0wRghIYIM?si=50OGRKXF8MHHB6oq"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
 
-      <div class="gallery-item color" data-type="color">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">BEFORE / AFTER</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Restaurant — Before / After</p>
+       <div class="gallery-item" data-type="lms">
+          <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/I1-hXbC2F7E?si=bcD_M-b3-Je2xwOm"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
 
-      <!-- Photo items -->
-      <div class="gallery-item photo" data-type="photo">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+
+ <div class="gallery-item" data-type="lms">
+          <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/ZI9D_CpvrJ4?si=oYNjif42afrcnBbP"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
 
-      <div class="gallery-item photo" data-type="photo">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Event</p>
+ <div class="gallery-item" data-type="lms">
+          <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/ZI9D_CpvrJ4?si=oYNjif42afrcnBbP"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
 
-      <div class="gallery-item photo" data-type="photo">
-        <div class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-          <span class="text-white/20 text-xs tracking-widest">PHOTO</span>
-        </div>
-        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Street</p>
+ <div class="gallery-item" data-type="lms">
+          <iframe
+  class="w-full aspect-video rounded-xl"
+  src="https://youtu.be/b0z_uD61Rn8?si=8AQLDHpfSFgqs-MY"
+  frameborder="0"
+  allowfullscreen
+/>
+        <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Like Mike Sport</p>
       </div>
+ 
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/6.png" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld - Early Prototype</p>
+</div>
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/4.jpg" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld - Early Prototype</p>
+</div>
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/1.png" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld</p>
+</div>
+
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/2.png" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld</p>
+</div>
+
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/3.png" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld</p>
+</div>
+
+
+<div class="gallery-item" data-type="3d">
+  <img class="w-full rounded-xl" src="/images/game/5.png" alt="3D Game Design" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Shokudo Underworld</p>
+</div>
+      
+<div class="gallery-item" data-type="wildlife">
+  <img class="w-full rounded-xl" src="/images/wildlife/DSC00112.jpg" alt="Wildlife" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+</div>
+
+<div class="gallery-item" data-type="wildlife">
+  <img class="w-full rounded-xl" src="/images/wildlife/DSC00214.jpg" alt="Wildlife" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+</div>
+
+<div class="gallery-item" data-type="wildlife">
+  <img class="w-full rounded-xl" src="/images/wildlife/DSC00226.jpg" alt="Wildlife" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+</div>
+
+<div class="gallery-item" data-type="wildlife">
+  <img class="w-full rounded-xl" src="/images/wildlife/DSC00366.jpg" alt="Wildlife" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+</div>
+
+<div class="gallery-item" data-type="wildlife">
+  <img class="w-full rounded-xl" src="/images/wildlife/DSC00627.jpg" alt="Wildlife" />
+  <p class="mt-3 text-sm lg:text-base tracking-widest opacity-70">Wildlife</p>
+</div>
 
     </div>
   </div>
@@ -79,7 +138,7 @@ const items = [
 <script>
   function filter(type) {
     const items = document.querySelectorAll('.gallery-item');
-    const buttons = { all: 'btn-all', color: 'btn-color', photo: 'btn-photo' };
+    const buttons = { all: 'btn-all', lms: 'btn-lms', wildlife: 'btn-wildlife', '3d': 'btn-3d' };
 
     Object.values(buttons).forEach(id => {
       document.getElementById(id).classList.add('opacity-50');
@@ -90,11 +149,7 @@ const items = [
     document.getElementById(buttons[type]).classList.add('border-b', 'border-white');
 
     items.forEach(item => {
-      if (type === 'all' || item.dataset.type === type) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+      item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none';
     });
   }
 

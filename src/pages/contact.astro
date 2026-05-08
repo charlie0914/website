@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact — Charlie Liao">
+  <div class="pt-14 flex flex-col items-center justify-center px-6 lg:px-[160px]">
+    <div style="" class="lg:w-1/3 bg-white/10 rounded-2xl  p-10 w-[80%]">
+
+        <h2 class="text-3xl font-normal tracking-[0.12em]  " style="color: var(--color-orange);">Contact</h2>
+        <h2 class="text-sm lg:text-base font-normal tracking-[0.12em] mb-8  ">or just send to charlieliao99@gmail.com</h2>
+
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-8 ">
+
+        <input type="hidden" name="access_key" value="5c20bf44-c952-44e3-a3db-705ef1b64882" />
+        <input type="hidden" name="subject" value="New message from portfolio" />
+        <input type="checkbox" name="botcheck" class="hidden" />
+        <input type="hidden" name="redirect" value="false" />
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm lg:text-lg uppercase tracking-[0.12em] text-white">Name</label>
+          <input type="text" name="name" required class="bg-transparent border-b border-white/20 py-2 text-sm lg:text-base text-white focus:outline-none focus:border-white/60 transition-colors" placeholder="Your name" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm lg:text-lg uppercase tracking-[0.12em] text-white">Email</label>
+          <input type="email" name="email" required class="bg-transparent border-b border-white/20 py-2 text-sm lg:text-base text-white focus:outline-none focus:border-white/60 transition-colors" placeholder="your@email.com" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="text-sm lg:text-lg uppercase tracking-[0.12em] text-white">Message</label>
+          <textarea name="message" required rows="5" class="bg-transparent border-b border-white/20 py-2 text-sm lg:text-base text-white focus:outline-none focus:border-white/60 transition-colors resize-none" placeholder="Tell me about your project"></textarea>
+        </div>
+
+        <button type="submit" class="self-start px-8 py-2 rounded-full text-sm lg:text-lg tracking-widest text-white transition-opacity hover:opacity-80" style="background-color: var(--color-orange);">
+          Send
+        </button>
+        <p id="success" style="display:none ;" class="text-sm tracking-wide text-sm lg:text-lg ">
+         Message sent. I'll be in touch!!
+       </p>
+
+      </form>
+
+    </div>
+<iframe
+        class="lg:w-1/3 aspect-video my-24"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&showinfo=0&modestbranding=1&?vq=hd1080p"
+        allow="fullscreen"
+        allowfullscreen>
+
+      </iframe>
+  </div>
+
+<script>
+  const form = document.querySelector('form') as HTMLFormElement;
+  const success = document.getElementById('success');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+
+    form.reset();
+    if (success) success.style.display = 'block';
+  });
+</script>
+</Layout>
