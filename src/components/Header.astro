@@ -1,11 +1,10 @@
 ---
-const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname;
 ---
 <header class=" pt-6 pb-0">
 <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between lg:px-[160px] pt-4">
   <div class="text-center md:text-left">
-    <a href={`${base}`} class="block text-white no-underline">
+    <a href="/" class="block text-white no-underline">
       <h1 class="tracking-[0.35em] text-[36px] lg:text-6xl leading-none">Charlie Liao</h1>
     </a>
     <p class="mt-4 lg:ml-1.5 text:sm lg:text-xl tracking-wide text-left">
@@ -14,23 +13,23 @@ const pathname = Astro.url.pathname;
   </div>
     <!-- Desktop nav only -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href={`${base}`}
+      <a href="/"
         class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === `${base}` || pathname === `${base}/` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Home</a>
+        style={pathname === '/' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Home</a>
 
-      <a href={`${base}/about`}
+      <a href="/about"
         class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === `${base}/about` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>About Me</a>
+        style={pathname === '/about' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>About Me</a>
 
-      <a href={`${base}/pastwork`}
+      <a href="/pastwork"
         class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === `${base}/pastwork` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
+        style={pathname === '/pastwork' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
 
-      <a href={`${base}/gallery`}
+      <a href="/gallery"
         class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === `${base}/gallery` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Gallery</a>
+        style={pathname === '/gallery' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Gallery</a>
 
-      <a href={`${base}/contact`}
+      <a href="/contact"
         class="px-6 py-2 rounded-full text-sm lg:text-2xl tracking-widest"
         style="background-color: var(--color-orange); color: white;">
         Contact
@@ -67,11 +66,11 @@ const pathname = Astro.url.pathname;
   </button>
 
   <nav class="flex flex-col items-center gap-8">
-    <a href={`${base}`} class="text-white text-2xl tracking-widest" style={pathname === `${base}` || pathname === `${base}/` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
-    <a href={`${base}/about`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/about` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
-    <a href={`${base}/pastwork`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/pastwork` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
-    <a href={`${base}/gallery`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/gallery` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Gallery</a>
-    <a href={`${base}/contact`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/contact` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
+    <a href="/" class="text-white text-2xl tracking-widest" style={pathname === '/' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
+    <a href="/about" class="text-white text-2xl tracking-widest" style={pathname === '/about' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
+    <a href="/pastwork" class="text-white text-2xl tracking-widest" style={pathname === '/pastwork' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
+    <a href="/gallery" class="text-white text-2xl tracking-widest" style={pathname === '/gallery' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Gallery</a>
+    <a href="/contact" class="text-white text-2xl tracking-widest" style={pathname === '/contact' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
   </nav>
 </div>
 
