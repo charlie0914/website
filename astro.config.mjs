@@ -6,7 +6,7 @@
     // https://astro.build/config
     export default defineConfig({
 
-      site: 'https://charlie0914.github.io',
+      site: 'https://charlieliao.taipei',
       base: '/website',
 
       vite: {
