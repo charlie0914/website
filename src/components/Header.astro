@@ -1,45 +1,48 @@
 ---
+const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname;
 ---
 <header class=" pt-6 pb-0">
 <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between lg:px-[160px] pt-4">
   <div class="text-center md:text-left">
-    <a href="/" class="block text-white no-underline">
+    <a href={`${base}`} class="block text-white no-underline">
       <h1 class="tracking-[0.35em] text-[36px] lg:text-6xl leading-none">Charlie Liao</h1>
     </a>
-    <p class="mt-4 lg:ml-1.5  text:sm lg:text-xl tracking-wide text-left" >
+    <p class="mt-4 lg:ml-1.5 text:sm lg:text-xl tracking-wide text-left">
       Videographer, based in London & Taipei
     </p>
   </div>
     <!-- Desktop nav only -->
-    <nav class="hidden md:flex items-center gap-8 ">
-      <a href="/" 
-  class="tracking-widest text-sm lg:text-2xl"
- style={pathname === '/' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Home</a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href={`${base}`}
+        class="tracking-widest text-sm lg:text-2xl"
+        style={pathname === `${base}` || pathname === `${base}/` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Home</a>
 
-<a href="/about"
-  class="tracking-widest text-sm lg:text-2xl"
-  style={pathname === '/about' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>About Me</a>
+      <a href={`${base}/about`}
+        class="tracking-widest text-sm lg:text-2xl"
+        style={pathname === `${base}/about` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>About Me</a>
 
-<a href="/pastwork"
-  class="tracking-widest text-sm lg:text-2xl"
-  style={pathname === '/pastwork' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
+      <a href={`${base}/pastwork`}
+        class="tracking-widest text-sm lg:text-2xl"
+        style={pathname === `${base}/pastwork` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
 
-<a href="/gallery"
-  class="tracking-widest text-sm lg:text-2xl"
-  style={pathname === '/gallery' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px; ' : ''}>Gallery</a>
-      <a href="/contact"
+      <a href={`${base}/gallery`}
+        class="tracking-widest text-sm lg:text-2xl"
+        style={pathname === `${base}/gallery` ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Gallery</a>
+
+      <a href={`${base}/contact`}
         class="px-6 py-2 rounded-full text-sm lg:text-2xl tracking-widest"
         style="background-color: var(--color-orange); color: white;">
         Contact
       </a>
     </nav>
-    
 </div>
+
 <!-- Desktop: 1px orange line -->
 <div class="hidden md:block mt-4 px-[160px]">
   <div class="h-[1px] w-full" style="background-color: var(--color-orange);"></div>
 </div>
+
 <!-- Mobile: full width orange bar, whole thing is the button -->
 <div class="md:hidden mt-4">
   <button id="hamburger"
@@ -52,25 +55,24 @@ const pathname = Astro.url.pathname;
     </div>
   </button>
 </div>
+
 <!-- Full page overlay -->
 <div id="mobile-overlay"
    class="fixed inset-0 z-[999] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
    style="background-color: rgba(255, 150, 29, 1);">
 
-  <!-- Close button -->
   <button id="close-menu"
     class="absolute top-6 right-6 text-white text-3xl leading-none cursor-pointer">
     ✕
   </button>
 
-  <!-- Nav links -->
-<nav class="flex flex-col items-center gap-8">
-  <a href="/" class="text-white text-2xl tracking-widest" style={pathname === '/' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
-  <a href="/about" class="text-white text-2xl tracking-widest" style={pathname === '/about' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
-  <a href="/pastwork" class="text-white text-2xl tracking-widest" style={pathname === '/pastwork' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
-  <a href="/gallery" class="text-white text-2xl tracking-widest" style={pathname === '/gallery' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Gallery</a>
-  <a href="/contact" class="text-white text-2xl tracking-widest" style={pathname === '/contact' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
-</nav>
+  <nav class="flex flex-col items-center gap-8">
+    <a href={`${base}`} class="text-white text-2xl tracking-widest" style={pathname === `${base}` || pathname === `${base}/` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
+    <a href={`${base}/about`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/about` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
+    <a href={`${base}/pastwork`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/pastwork` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
+    <a href={`${base}/gallery`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/gallery` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Gallery</a>
+    <a href={`${base}/contact`} class="text-white text-2xl tracking-widest" style={pathname === `${base}/contact` ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
+  </nav>
 </div>
 
 <script>
@@ -92,11 +94,10 @@ const pathname = Astro.url.pathname;
   hamburger?.addEventListener('click', openMenu);
   closeBtn?.addEventListener('click', closeMenu);
 
-  // Close on nav link click
   overlay?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 </script>
   </div>
 
-</header> 
+</header>

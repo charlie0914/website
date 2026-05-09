@@ -1,16 +1,16 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+    // @ts-check
+    import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite';
+    import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
-export default defineConfig({
+    // https://astro.build/config
+    export default defineConfig({
 
-  site: 'https://charlie0914.github.io',
-  base: '/website',
+      site: 'https://charlie0914.github.io',
+      base: '/website',
 
-  vite: {
-    plugins: [tailwindcss()]
-  }
-  
-});
+      vite: {
+        plugins: [tailwindcss()]
+      }
+      
+    });
