@@ -7,7 +7,6 @@
     export default defineConfig({
 
       site: 'https://charlieliao.taipei',
-      base: '/website',
 
       vite: {
         plugins: [tailwindcss()]
