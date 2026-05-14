@@ -61,9 +61,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="flex items-center justify-between mt-4">
-            <button class="carousel-prev px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">← prev</button>
-            <span class="carousel-indicator text-white/30 text-sm tracking-widest"></span>
-            <button class="carousel-next px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">next →</button>
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
           </div>
         </div>
       </div>
@@ -72,12 +72,31 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-sm lg:text-lg font-medium">Videographer / Video Course Producer</p>
         <p class="text-sm lg:text-base text-white/65 mt-0.5 mx-2">NTU Language Training & Testing Center</p>
         <a href="https://www.lttc.ntu.edu.tw/" class="mx-2 text-sm lg:text-base underline" style="color: var(--color-orange);">Link</a>
-        <!-- EMBED PLACEHOLDER -->
-        <div class="mt-4 grid grid-cols-2 gap-3">
-          <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
-          <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
-          <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
-          <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
+
+        <div class="mt-4" data-carousel="lttc">
+          <div class="carousel-track grid gap-3">
+            <div class="carousel-item">
+              <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <div class="aspect-video rounded-xl border border-white/20 flex items-center justify-center text-white/30 text-sm tracking-widest">embed here</div>
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-4">
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
+          </div>
         </div>
       </div>
 
@@ -140,9 +159,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="flex items-center justify-between mt-4">
-            <button class="carousel-prev px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">← prev</button>
-            <span class="carousel-indicator text-white/30 text-sm tracking-widest"></span>
-            <button class="carousel-next px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">next →</button>
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
           </div>
         </div>
       </div>
