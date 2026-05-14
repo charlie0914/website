@@ -65,9 +65,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="flex items-center justify-between mt-4">
-            <button class="carousel-prev px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">← prev</button>
-            <span class="carousel-indicator text-white/30 text-sm tracking-widest"></span>
-            <button class="carousel-next px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">next →</button>
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
           </div>
         </div>
       </div>
@@ -82,12 +82,31 @@ import Layout from '../layouts/Layout.astro';
    <br />NTU is Taiwan's most prestigious public research university, consistently ranks as the top university in Taiwan and among the top in Asia.
 </p>
         <a href="https://www.lttc.ntu.edu.tw/" class="mx-2 text-sm lg:text-base underline" style="color: var(--color-orange);">Link</a>
-        <!-- EMBED PLACEHOLDER -->
-        <div class="mt-4 grid grid-cols-2 gap-3">
-           <img class="w-full rounded-xl" src="/images/lttc/eng1.jpg" alt="" />
-            <img class="w-full rounded-xl" src="/images/lttc/eng2.jpg" alt="" />
-            <img class="w-full rounded-xl" src="/images/lttc/jp1.jpg" alt="" />
-            <img class="w-full rounded-xl" src="/images/lttc/jp2.jpg" alt="" />
+
+        <div class="mt-4" data-carousel="lttc">
+          <div class="carousel-track grid gap-3">
+            <div class="carousel-item">
+              <img class="w-full rounded-xl" src="/images/lttc/eng1.jpg" alt="" />
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <img class="w-full rounded-xl" src="/images/lttc/eng2.jpg" alt="" />
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <img class="w-full rounded-xl" src="/images/lttc/jp1.jpg" alt="" />
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+            <div class="carousel-item">
+              <img class="w-full rounded-xl" src="/images/lttc/jp2.jpg" alt="" />
+              <p class="mt-2 text-sm tracking-widest text-white/50">description here</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-4">
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
+          </div>
         </div>
       </div>
 
@@ -144,9 +163,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="flex items-center justify-between mt-4">
-            <button class="carousel-prev px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">← prev</button>
-            <span class="carousel-indicator text-white/30 text-sm tracking-widest"></span>
-            <button class="carousel-next px-4 py-1.5 rounded-lg border border-white/20 text-sm tracking-widest text-white/50 hover:text-white hover:border-white/50 transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed">next →</button>
+            <button class="carousel-prev px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">← prev</button>
+            <span class="carousel-indicator text-sm tracking-widest" style="color: var(--color-orange);"></span>
+            <button class="carousel-next px-4 py-1.5 rounded-lg border text-sm tracking-widest transition-all duration-200 hover:opacity-70 disabled:opacity-20 disabled:cursor-not-allowed" style="border-color: var(--color-orange); color: var(--color-orange);">next →</button>
           </div>
         </div>
       </div>
