@@ -8,7 +8,7 @@ const pathname = Astro.url.pathname;
       <h1 class="tracking-[0.35em] text-[36px] lg:text-6xl leading-none">Charlie Liao</h1>
     </a>
     <p class="mt-4 lg:ml-1.5 text:sm lg:text-xl tracking-wide text-left">
-      Videographer, based in London & Taipei
+      Videographer, based in Taipei
     </p>
   </div>
     <!-- Desktop nav only -->
@@ -24,10 +24,6 @@ const pathname = Astro.url.pathname;
       <a href="/pastwork"
         class="tracking-widest text-sm lg:text-2xl"
         style={pathname === '/pastwork' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
-
-      <a href="/gallery"
-        class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === '/gallery' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Gallery</a>
 
       <a href="/contact"
         class="px-6 py-2 rounded-full text-sm lg:text-2xl tracking-widest"
@@ -69,8 +65,7 @@ const pathname = Astro.url.pathname;
     <a href="/" class="text-white text-2xl tracking-widest" style={pathname === '/' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
     <a href="/about" class="text-white text-2xl tracking-widest" style={pathname === '/about' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
     <a href="/pastwork" class="text-white text-2xl tracking-widest" style={pathname === '/pastwork' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
-    <a href="/gallery" class="text-white text-2xl tracking-widest" style={pathname === '/gallery' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Gallery</a>
-    <a href="/contact" class="text-white text-2xl tracking-widest" style={pathname === '/contact' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
+<a href="/contact" class="text-white text-2xl tracking-widest" style={pathname === '/contact' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
   </nav>
 </div>
 

@@ -1,28 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import pfp from '../assets/pfp.png';
 ---
 
 <Layout title="About — Charlie Liao">
-  <main class="px-6 lg:px-[160px] py-14">
-    <div class="flex flex-col md:flex-row gap-12 items-start lg:px-6">
+  <main class="px-6 lg:px-[160px] py-10">
+    <div class="flex flex-col md:flex-row gap-10 items-center lg:px-6">
 
-      <!-- Image placeholder -->
-        <Image src={pfp} alt="Charlie Liao" class="w-full md:w-[400px] shrink-0 aspect-[3/4] object-cover rounded-xl" />
+      <img src="/images/pfp/pfp.jpg" alt="Charlie Liao" class="w-full md:w-[320px] shrink-0 aspect-[3/4] object-cover rounded-xl" />
 
-      <!-- Text -->
-      <div class="flex flex-col gap-6 p-4 text-white/80 text-lg lg:text-xl leading-relaxed">
-        <p>hi Im charlie, i love coffee, making videos, and i love coffee, and videos
-</p>
-        <p>making videos was a cool side hustle when im still in school, now im turning it into a full time job, working as a solo freelancer, i handle everything all by myself, from  planning and organizing the set, finishing the shots and produce the final content
-</p>
-<p>if you're interested in working with me, just go to my contact page</p>
-
-          <p>or feel free to send me a line at charlieliao99@gmail.com</p>
-i'm looking forward to work with you!!
-<p> and apparently i don't look like a character from the simpsons
-</p>
+      <div class="flex flex-col gap-4 p-4 text-white/80 text-lg lg:text-xl leading-relaxed">
+        <p>hi Im charlie, videographer and editor with experience across sports content, e-learning production, and game development.</p>
+        <p>I work from lighting, audio, to final product, and when im off the camera, i make coffee, sending memes to my friends, and touch some grass.</p>
+        <p>feel free to send me a line at charlieliao99@gmail.com</p>
       </div>
 
     </div>
