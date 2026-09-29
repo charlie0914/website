@@ -1,5 +1,4 @@
 ---
-const pathname = Astro.url.pathname;
 ---
 <header class="pt-6 pb-0" style="font-family: 'Cormorant Garamond', serif;">
 <div class="flex flex-col items-center md:flex-row md:items-end md:justify-between lg:px-[160px] pt-4">
@@ -8,24 +7,21 @@ const pathname = Astro.url.pathname;
       <h1 class="tracking-[0.35em] text-[36px] lg:text-6xl leading-none">Charlie Liao</h1>
     </a>
     <p class="mt-4 lg:ml-1.5 text:sm lg:text-xl tracking-wide text-left">
-      Videographer
+      Videographer | Video Editor | Sports | E-learning
     </p>
   </div>
     <!-- Desktop nav only -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href="/"
-        class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === '/' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Home</a>
+      <a href="#top" data-nav="home" aria-current="true"
+        class="nav-link tracking-widest text-sm lg:text-2xl">Home</a>
 
-      <a href="/about"
-        class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === '/about' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>About Me</a>
+      <a href="#about" data-nav="about"
+        class="nav-link tracking-widest text-sm lg:text-2xl">About Me</a>
 
-      <a href="/pastwork"
-        class="tracking-widest text-sm lg:text-2xl"
-        style={pathname === '/pastwork' ? 'color: var(--color-orange); text-decoration: underline; text-underline-offset: 6px;' : ''}>Past Work</a>
+      <a href="#pastwork" data-nav="pastwork"
+        class="nav-link tracking-widest text-sm lg:text-2xl">Past Work</a>
 
-      <a href="/contact"
+      <a href="#contact"
         class="px-6 py-2 rounded-full text-sm lg:text-2xl tracking-widest"
         style="background-color: var(--color-orange); color: white;">
         Contact
@@ -62,10 +58,10 @@ const pathname = Astro.url.pathname;
   </button>
 
   <nav class="flex flex-col items-center gap-8">
-    <a href="/" class="text-white text-2xl tracking-widest" style={pathname === '/' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Home</a>
-    <a href="/about" class="text-white text-2xl tracking-widest" style={pathname === '/about' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>About Me</a>
-    <a href="/pastwork" class="text-white text-2xl tracking-widest" style={pathname === '/pastwork' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Past Work</a>
-<a href="/contact" class="text-white text-2xl tracking-widest" style={pathname === '/contact' ? 'text-decoration: underline; text-underline-offset: 4px; color: #001924;' : ''}>Contact</a>
+    <a href="#top" data-nav="home" aria-current="true" class="mobile-link text-white text-2xl tracking-widest">Home</a>
+    <a href="#about" data-nav="about" class="mobile-link text-white text-2xl tracking-widest">About Me</a>
+    <a href="#pastwork" data-nav="pastwork" class="mobile-link text-white text-2xl tracking-widest">Past Work</a>
+    <a href="#contact" data-nav="contact" class="mobile-link text-white text-2xl tracking-widest">Contact</a>
   </nav>
 </div>
 
@@ -91,7 +87,38 @@ const pathname = Astro.url.pathname;
   overlay?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Highlight the nav link for the section currently in view
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-nav]');
+
+  function setActive(id: string) {
+    navLinks.forEach(link => {
+      if (link.dataset.nav === id) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
 </script>
-  </div>
+
+<style>
+  .nav-link[aria-current] {
+    color: var(--color-orange);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+
+  .mobile-link[aria-current] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #001924;
+  }
+</style>
 
 </header>

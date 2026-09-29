@@ -1,9 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Past Work — Charlie Liao">
-  <div class="px-6 lg:px-[160px] py-8 tracking-[0.05em]">
+  <section id="pastwork" class="px-6 lg:px-[160px] py-8 tracking-[0.05em]">
     <h2 class="text-xl lg:text-3xl font-normal mb-8" style="color: var(--color-orange); font-family: 'Cormorant Garamond', serif;">Past work</h2>
 
     <!-- Video -->
@@ -126,7 +124,8 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-sm lg:text-base text-white/65 mt-0.5 mx-2">Taipei East Gate Presbyterian Church</p>
         <a href="https://www.eastgate.org.tw/" class="text-sm lg:text-base underline mx-2" style="color: var(--color-orange);">Link</a>
         <!-- EMBED PLACEHOLDER -->
-        
+
+      </div>
     </div>
 
     <!-- Game Design -->
@@ -183,7 +182,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 <script>
   function initCarousel(root: HTMLElement) {
@@ -232,4 +231,3 @@ import Layout from '../layouts/Layout.astro';
 
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(initCarousel);
 </script>
-</Layout>

@@ -20,6 +20,10 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 a {
   color: #ffffff;
   transition: opacity 0.2s ease;
